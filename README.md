@@ -105,6 +105,7 @@ Implementation support documents:
 
 - [Customer questionnaire](docs/CUSTOMER_QUESTIONNAIRE.md)
 - [LinkedIn article draft](docs/LINKEDIN_ARTICLE_EN.md)
+- [LinkedIn share post](docs/LINKEDIN_SHARE_POST_EN.md)
 
 Current code implements the Microsoft Graph mailbox connector. Google Workspace/Gmail is documented as an equivalent extension scenario; it needs a Gmail API connector before runtime use.
 
