@@ -55,6 +55,8 @@ The BTP app exposes:
 
 The mail worker requires `WORKER_SHARED_SECRET` and Microsoft Graph app-only settings. It currently runs with `SAP_MODE=dry-run`, so it extracts and validates invoices but does not post to SAP.
 
+`WORKER_SHARED_SECRET` is the application-level shared token used to protect admin and worker endpoints. It is not a Microsoft Graph secret and it is not an SAP communication user password. Set it as a BTP/Cloud Foundry environment variable, then enter the same value in the UI `Worker secret` field or pass it to scripts as `-WorkerSharedSecret`. Rotate it if it is shared outside the implementation team.
+
 The React admin UI can now maintain:
 
 - English/Turkish UI language selection

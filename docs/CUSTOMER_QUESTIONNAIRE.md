@@ -212,6 +212,17 @@ Yeni kullanici ekleme:
   - Demo: Worker secret
   - Production: XSUAA/App Router/IAS SSO onerilir
 
+Worker secret aciklamasi:
+
+- `WORKER_SHARED_SECRET`, uygulamanin admin UI ve worker endpoint'lerini korumak icin kullandigi ortak token'dir.
+- Microsoft Graph client secret degildir.
+- SAP communication user sifresi degildir.
+- BTP/Cloud Foundry ortam degiskeni olarak set edilir.
+- UI'daki `Worker secret` alanina ayni deger girilir.
+- Script ile manuel job calistirilirken `-WorkerSharedSecret` olarak ayni deger verilir.
+- Musteri saglamazsa implementasyon ekibi guclu random bir deger uretip musterinin secret yonetimine teslim etmelidir.
+- Deger paylasilirsa veya ekip degisirse rotate edilmelidir.
+
 ## 8. Uygulamayi Calistirma
 
 Developer/build:
