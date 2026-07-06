@@ -1,0 +1,24 @@
+{
+  "companyCodes": {
+    "2222222222": ""
+  },
+  "currency": "TRY",
+  "documentType": "",
+  "postingMode": "",
+  "defaultGlAccount": "",
+  "defaultCostCenter": "",
+  "defaultPaymentTerms": "",
+  "taxCodes": {
+    "20": ""
+  },
+  "suppliers": {
+    "1111111111": {
+      "name": "EXAMPLE SUPPLIER",
+      "sapSupplierId": "",
+      "glAccount": "",
+      "costCenter": "",
+      "taxCode": "",
+      "paymentTerms": ""
+    }
+  }
+}

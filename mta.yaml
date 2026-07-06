@@ -1,0 +1,47 @@
+_schema-version: "3.2"
+ID: incoming-invoice-automation
+version: 0.1.0
+
+parameters:
+  enable-parallel-deployments: true
+
+modules:
+  - name: incoming-invoice-automation-srv
+    type: python
+    path: .
+    parameters:
+      memory: 512M
+      disk-quota: 1G
+      buildpack: python_buildpack
+    build-parameters:
+      ignore:
+        - .venv/
+        - .git/
+        - .github/
+        - .vscode/
+        - .pytest_cache/
+        - mta_archives/
+        - tmp/
+        - output/
+        - data/
+        - tests/
+        - "*.pdf"
+        - "*.mtar"
+        - "*.pyc"
+        - __pycache__/
+        - .env
+        - .env.*
+        - .worker-secret.local.txt
+        - AGENTS.md
+        - Makefile_*.mta
+        - web/node_modules/
+        - .vite/
+    properties:
+      SAP_MODE: dry-run
+      GRAPH_SOURCE_FOLDER: Inbox
+      GRAPH_PROCESSED_FOLDER: Processed
+      GRAPH_MANUAL_FOLDER: Manual
+      GRAPH_ERROR_FOLDER: Error
+      GRAPH_SUBJECT_KEYWORDS: e-Fatura,e-Arsiv,Fatura
+      MAIL_POLLER_ENABLED: true
+      MAIL_POLL_INTERVAL_SECONDS: 300

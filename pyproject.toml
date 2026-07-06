@@ -1,0 +1,27 @@
+[project]
+name = "incoming-invoice-automation"
+version = "0.1.0"
+description = "PDF e-invoice extraction core for Microsoft mail to SAP S/4HANA Public Cloud automation."
+requires-python = ">=3.11"
+dependencies = [
+  "Flask>=3.0.0",
+  "gunicorn>=22.0.0",
+  "pdfplumber>=0.11.0",
+  "pillow>=10.0.0",
+  "pymupdf>=1.24.0",
+  "pypdf>=5.0.0",
+  "requests>=2.32.0",
+  "zxing-cpp>=2.3.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+invoice-extract = "invoice_automation.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,683 @@
+:root {
+  --sap-shell: #354a5f;
+  --sap-shell-border: #2f4152;
+  --sap-bg: #f5f6f7;
+  --sap-surface: #fff;
+  --sap-surface-2: #f7f7f7;
+  --sap-border: #d9d9d9;
+  --sap-border-soft: #ededed;
+  --sap-text: #1d2d3e;
+  --sap-text-muted: #556b82;
+  --sap-blue: #0070f2;
+  --sap-blue-hover: #0057d2;
+  --sap-green: #188918;
+  --sap-orange: #df6e0c;
+  --sap-red: #bb0000;
+  font-family: "72", "Segoe UI", Arial, sans-serif;
+  color: var(--sap-text);
+  background: var(--sap-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  align-items: center;
+  background: var(--sap-blue);
+  border: 1px solid var(--sap-blue);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 8px;
+  height: 36px;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+button:hover {
+  background: var(--sap-blue-hover);
+  border-color: var(--sap-blue-hover);
+}
+
+button:disabled {
+  background: #b8c0c7;
+  border-color: #b8c0c7;
+  cursor: not-allowed;
+}
+
+.shell {
+  min-height: 100vh;
+  padding: 0 0 28px;
+}
+
+.topbar {
+  align-items: center;
+  background: var(--sap-shell);
+  border-bottom: 1px solid var(--sap-shell-border);
+  color: #fff;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 0 24px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.brand svg {
+  color: #d1e8ff;
+  flex: 0 0 auto;
+}
+
+h1,
+h2 {
+  letter-spacing: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.subline {
+  color: #d1e8ff;
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.statusStrip {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  min-width: 340px;
+}
+
+.statusChip,
+.secretBox {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+  display: flex;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+.statusChip {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusChip.ok {
+  color: #bde986;
+}
+
+.statusChip.warn {
+  color: #ffd580;
+}
+
+.secretBox {
+  flex: 1;
+  min-width: 230px;
+}
+
+.secretBox svg {
+  color: #d1e8ff;
+}
+
+.secretBox input {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  min-width: 80px;
+  outline: none;
+  width: 100%;
+}
+
+.secretBox input::placeholder {
+  color: #d6e3ef;
+}
+
+.iconButton {
+  height: 28px;
+  padding: 0;
+  width: 32px;
+}
+
+.objectHeader {
+  align-items: flex-end;
+  background: var(--sap-surface);
+  border-bottom: 1px solid var(--sap-border);
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 22px 24px 18px;
+}
+
+.eyebrow {
+  color: var(--sap-text-muted);
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.objectFacts {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(120px, auto));
+}
+
+.objectFact {
+  border-left: 3px solid var(--sap-border);
+  min-width: 0;
+  padding-left: 10px;
+}
+
+.objectFact.positive {
+  border-left-color: var(--sap-green);
+}
+
+.objectFact.critical {
+  border-left-color: var(--sap-orange);
+}
+
+.objectFact span {
+  color: var(--sap-text-muted);
+  display: block;
+  font-size: 12px;
+}
+
+.objectFact strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 3px;
+  max-width: 280px;
+  overflow-wrap: anywhere;
+}
+
+.tabs {
+  align-items: center;
+  background: var(--sap-surface);
+  border-bottom: 1px solid var(--sap-border);
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  padding: 0 24px;
+}
+
+.tabs button {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  color: var(--sap-text-muted);
+  height: 46px;
+  padding: 0 14px;
+  white-space: nowrap;
+}
+
+.tabs button:hover {
+  background: #f0f5ff;
+  color: var(--sap-blue);
+}
+
+.tabs button.active {
+  border-bottom-color: var(--sap-blue);
+  color: var(--sap-text);
+}
+
+.notice,
+.grid {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.notice {
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 10px 12px;
+}
+
+.notice.ok {
+  background: #f1fdf1;
+  border: 1px solid #a8e4a8;
+  color: var(--sap-green);
+}
+
+.notice.warn {
+  background: #fff8ed;
+  border: 1px solid #ffd7a3;
+  color: var(--sap-orange);
+}
+
+.notice.error {
+  background: #fff1f1;
+  border: 1px solid #ffc4c4;
+  color: var(--sap-red);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.grid.two {
+  grid-template-columns: minmax(320px, 0.82fr) minmax(520px, 1.18fr);
+}
+
+.mappingGrid {
+  grid-template-columns: minmax(320px, 1fr);
+}
+
+.settingsGrid {
+  grid-template-columns: minmax(360px, 1.25fr) minmax(280px, 0.85fr) minmax(320px, 0.95fr);
+}
+
+.panel {
+  background: var(--sap-surface);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(34, 53, 72, 0.08);
+  min-width: 0;
+  padding: 0;
+}
+
+.panelTitle {
+  align-items: center;
+  border-bottom: 1px solid var(--sap-border-soft);
+  display: flex;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 16px;
+}
+
+.panelTitle svg {
+  color: var(--sap-blue);
+  flex: 0 0 auto;
+}
+
+.panelTitle h2 {
+  font-size: 15px;
+}
+
+.fileRow,
+.toolbar,
+.actionGrid,
+.summaryGrid,
+.formGrid,
+.metaLine,
+textarea,
+.jsonPanel pre,
+.tableWrap {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.fileRow,
+.toolbar,
+.actionGrid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.fileRow input {
+  background: var(--sap-surface-2);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  height: 36px;
+  min-width: 220px;
+  padding: 6px;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+}
+
+.splitToolbar {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dangerButton {
+  background: #fff;
+  border-color: var(--sap-red);
+  color: var(--sap-red);
+}
+
+.dangerButton:hover {
+  background: #fff1f1;
+  border-color: var(--sap-red);
+  color: var(--sap-red);
+}
+
+.segmented {
+  background: var(--sap-surface-2);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.segmented button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--sap-text-muted);
+}
+
+.segmented button:hover,
+.segmented button.active {
+  background: #fff;
+  color: var(--sap-blue);
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.formGrid.single {
+  grid-template-columns: 1fr;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field span,
+.toggleField span {
+  color: var(--sap-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.field input {
+  background: var(--sap-surface);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  color: var(--sap-text);
+  height: 36px;
+  min-width: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.field input:focus,
+textarea:focus {
+  border-color: var(--sap-blue);
+  box-shadow: 0 0 0 1px var(--sap-blue);
+  outline: none;
+}
+
+.configuredBadge {
+  background: #f1fdf1;
+  border: 1px solid #a8e4a8;
+  border-radius: 999px;
+  color: var(--sap-green);
+  display: inline-block;
+  font-size: 11px;
+  margin-left: 8px;
+  padding: 1px 7px;
+}
+
+.toggleField {
+  align-items: center;
+  background: var(--sap-surface-2);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  display: flex;
+  gap: 9px;
+  min-height: 36px;
+  padding: 0 10px;
+}
+
+.toggleField input {
+  height: 16px;
+  width: 16px;
+}
+
+.summaryGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.metric {
+  background: var(--sap-surface-2);
+  border: 1px solid var(--sap-border-soft);
+  border-radius: 4px;
+  min-height: 66px;
+  padding: 10px 12px;
+}
+
+.metric span {
+  color: var(--sap-text-muted);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.tableWrap {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 680px;
+  width: 100%;
+}
+
+.logTable {
+  min-width: 960px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--sap-border-soft);
+  font-size: 13px;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--sap-surface-2);
+  color: var(--sap-text-muted);
+  font-weight: 700;
+}
+
+td {
+  overflow-wrap: anywhere;
+}
+
+.emptyCell {
+  color: #7a8793;
+  text-align: center;
+}
+
+.pill {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+}
+
+.pill.ok {
+  background: #f1fdf1;
+  color: var(--sap-green);
+}
+
+.pill.warn {
+  background: #fff8ed;
+  color: var(--sap-orange);
+}
+
+.metaLine {
+  align-items: center;
+  color: var(--sap-text-muted);
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.metaLine strong {
+  color: var(--sap-orange);
+}
+
+textarea {
+  background: var(--sap-surface);
+  border: 1px solid var(--sap-border);
+  border-radius: 4px;
+  color: var(--sap-text);
+  display: block;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  margin-top: 12px;
+  min-height: 520px;
+  padding: 12px;
+  resize: vertical;
+  width: calc(100% - 32px);
+}
+
+.jsonPanel pre {
+  background: var(--sap-surface-2);
+  border: 1px solid var(--sap-border-soft);
+  border-radius: 4px;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  max-height: 560px;
+  overflow: auto;
+  padding: 12px;
+}
+
+@media (max-width: 1100px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .objectHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .objectFacts {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  .topbar,
+  .statusStrip {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .topbar {
+    padding: 12px 16px;
+  }
+
+  .statusStrip {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .objectHeader,
+  .tabs {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .notice,
+  .grid {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .objectFacts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .formGrid,
+  .actionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .splitToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .segmented {
+    display: grid;
+    width: 100%;
+  }
+}

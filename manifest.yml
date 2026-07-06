@@ -1,0 +1,16 @@
+applications:
+  - name: incoming-invoice-automation-srv
+    memory: 512M
+    disk_quota: 1G
+    buildpacks:
+      - python_buildpack
+    command: gunicorn --bind 0.0.0.0:$PORT invoice_automation.web:app
+    env:
+      SAP_MODE: dry-run
+      GRAPH_SOURCE_FOLDER: Inbox
+      GRAPH_PROCESSED_FOLDER: Processed
+      GRAPH_MANUAL_FOLDER: Manual
+      GRAPH_ERROR_FOLDER: Error
+      GRAPH_SUBJECT_KEYWORDS: e-Fatura,e-Arsiv,Fatura
+      MAIL_POLLER_ENABLED: true
+      MAIL_POLL_INTERVAL_SECONDS: 300
