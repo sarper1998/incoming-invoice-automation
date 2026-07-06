@@ -14,7 +14,7 @@ If a mapping is missing, such as supplier/BP, company code, tax code, or GL acco
 
 The backend runs on SAP BTP Cloud Foundry with Python and Flask. The frontend is built with React and designed to feel close to a Fiori-style operational app.
 
-From the application, users can manage the mailbox settings, SAP connection placeholders, mapping data, processed mail logs, and SAP posting attempt logs.
+From the application, users can switch between English and Turkish, manage the mailbox settings, SAP connection placeholders, mapping data, processed mail logs, and SAP posting attempt logs.
 
 The app is also exposed in SAP S/4HANA Cloud Launchpad as a tile.
 

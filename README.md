@@ -57,6 +57,7 @@ The mail worker requires `WORKER_SHARED_SECRET` and Microsoft Graph app-only set
 
 The React admin UI can now maintain:
 
+- English/Turkish UI language selection
 - which mailbox and folder will be read
 - Microsoft Graph app-only credentials
 - poller interval and enabled/disabled state
