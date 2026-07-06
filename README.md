@@ -103,7 +103,7 @@ With one CF instance this checks the source folder every 5 minutes. Processed me
 Implementation support documents:
 
 - [Customer questionnaire](docs/CUSTOMER_QUESTIONNAIRE.md)
-- [LinkedIn article draft](docs/LINKEDIN_ARTICLE_TR.md)
+- [LinkedIn article draft](docs/LINKEDIN_ARTICLE_EN.md)
 
 Current code implements the Microsoft Graph mailbox connector. Google Workspace/Gmail is documented as an equivalent extension scenario; it needs a Gmail API connector before runtime use.
 
